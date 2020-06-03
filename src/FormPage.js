@@ -6,7 +6,7 @@ import "./FormList.css";
 import Axios from "axios";
 
 const fetchForm = (setForm, formId) => {
-  Axios.get("http://localhost:8080/api/forms/" + formId)
+  Axios.get("https://form-app-backend.herokuapp.com/api/forms/" + formId)
     .then((res) => setForm(res.data))
     .catch((err) => alert(JSON.stringify(err)));
 };

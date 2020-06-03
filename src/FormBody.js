@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { GoogleApiWrapper } from "google-maps-react";
 import FormBodyItem from "./FormBodyItem";
+import { useHistory } from "react-router";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import "./FormBody.css";
 import Axios from "axios";
 
 function FormBody(props) {
+  const history = useHistory();
   const fields = props.fields ? props.fields : [];
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
@@ -71,10 +73,18 @@ function FormBody(props) {
       data["FormId"] = props.formId;
       data["Fields"] = dataList;
       console.log(JSON.stringify(data));
-      Axios.post("http://localhost:8080/api/post_form", data).then(() => {
-        alert("SENT!");
-      });
-    } else alert("ERROR");
+      Axios.post(
+        "https://form-app-backend.herokuapp.com/api/forms/submit",
+        data
+      )
+        .then(() => {
+          alert("فرم با موفّقیّت ثبت شد");
+          history.push("/");
+        })
+        .catch(() => {
+          alert("مشکلی رخ داد");
+        });
+    }
   };
   return (
     <div className="d-flex flex-column  p-5 m-3 form-container">

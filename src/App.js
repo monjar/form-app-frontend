@@ -1,6 +1,6 @@
 import React from "react";
-import FormsList from "./FormsList";
-import FormPage from "./FormPage";
+import FormsList from "./Pages/FormsList";
+import FormPage from "./Pages/FormPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 function App() {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import FormBody from "./FormBody";
+import FormBody from "../Components/form/FormBody";
 import "./FormPage.css";
 import "./FormList.css";
 import Axios from "axios";

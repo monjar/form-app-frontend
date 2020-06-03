@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import FormListItem from "./FormListItem";
-import ScrollFab from "./ScrollToTopFab";
+import FormListItem from "../Components/formslist/FormListItem";
+import ScrollFab from "../Components/formslist/ScrollToTopFab";
 import "./FormList.css";
 import Axios from "axios";
 

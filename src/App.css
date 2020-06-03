@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d4f7ff;
+  height: 100%; /* needed for container min-height */
+}
